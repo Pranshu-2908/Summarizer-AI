@@ -25,7 +25,7 @@ const UploadForm = () => {
       console.error("error occurred while uploading", err);
       toast(err.message);
     },
-    onUploadBegin: ({ file }) => {
+    onUploadBegin: (file) => {
       console.log("upload has begun for", file);
     },
   });
