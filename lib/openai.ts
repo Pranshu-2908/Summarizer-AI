@@ -7,12 +7,12 @@ const openai = new OpenAI({
 export async function generateSummaryFromOpenAI(pdfText: String) {
   try {
     const completion = await openai.chat.completions.create({
-      model: "gpt-4",
+      model: "gpt-4o",
       messages: [
         { role: "system", content: SUMMARY_SYSTEM_PROMPT },
         {
           role: "user",
-          content: `transform this document into an engaging, easy-to-read summary with contextually relevant emojis and proper markdown formatting:\n\n${pdfText}`,
+          content: `Transform this document into an engaging, easy-to-read summary with contextually relevant emojis and proper markdown formatting:\n\n${pdfText}`,
         },
       ],
       temperature: 0.7,
@@ -23,5 +23,6 @@ export async function generateSummaryFromOpenAI(pdfText: String) {
     if (error.status === 429) {
       throw new Error("RATE_LIMIT_EXCEEDED");
     }
+    throw error;
   }
 }
