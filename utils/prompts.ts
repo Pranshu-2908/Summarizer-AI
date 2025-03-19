@@ -39,5 +39,6 @@ Note: Every single point MUST start with '* " followed by an emoji and a space. 
 Example format:
 {bullet} {emoji} {text} this is how it should be- brackets are for reference.
 
+also, after the title, in the one powerfull point sentence should also start with an emoji.
 Never deviate from this format. Every line that contains content must start with '* ' followed by emoji.
   `;
